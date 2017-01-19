@@ -28,7 +28,11 @@ function addSong(event) {
     type: 'POST',
     data: songData,
     success: getSongs
+    statusCode: 400:badInput
   })
+
+function badInput() {
+  alert("Sorry, either that song is already in our database or you didn't enter anything. Please try again.")
 }
 
 function displaySongs(songs) {
@@ -38,6 +42,6 @@ function displaySongs(songs) {
 
   songs.forEach(function(song) {
     $('#songs').append('<li>' + song.title + ' by '
-      + song.artist + ' from album ' + song.album + '</li>');
+      + song.artist + ' from album ' + song.album + song.dateAdded + '</li>');
   });
 }
