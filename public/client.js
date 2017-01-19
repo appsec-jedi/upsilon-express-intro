@@ -23,16 +23,19 @@ function addSong(event) {
 
   console.log(songData);
 
+
   $.ajax({
     url: '/songs',
     type: 'POST',
     data: songData,
-    success: getSongs
-    statusCode: 400:badInput
-  })
+    success: getSongs,
+    statusCode: {400:badInput}
+  });
+
+}
 
 function badInput() {
-  alert("Sorry, either that song is already in our database or you didn't enter anything. Please try again.")
+  alert("Sorry, either that song is already in our database or you didn't enter anything. Please try again.");
 }
 
 function displaySongs(songs) {

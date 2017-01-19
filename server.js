@@ -24,11 +24,11 @@ app.post('/songs', function(req,res){
   songs.forEach(function(song){
     if(req.body.title == song.title && req.body.artist == song.artist){
       validation = true;
-    }else if (req.body.title == '' || req.body.artist == '' || req.body.album == ''){
+    }else if (req.body.title == '' || req.body.artist == '' || req.body.album == '') {
       validation = true;
     }else{
       return validation;
-    }
+    };
   });
     if (validation = true) {
       res.sendStatus(400);
